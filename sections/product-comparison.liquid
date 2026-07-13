@@ -1,1 +1,123 @@
+<section class="section-comparison container" id="Comparison-{{ section.id }}">
+  <div class="comparison-header">
+    <h2>{{ section.settings.title | escape }}</h2>
+    <p>{{ section.settings.subtitle | escape }}</p>
+  </div>
 
+  <div class="matrix-grid">
+    <div class="matrix-col label-column">
+      <div class="matrix-cell cell-header">System Metrics</div>
+      <div class="matrix-cell">Neural Fabric Core</div>
+      <div class="matrix-cell">Calculated Compute</div>
+      <div class="matrix-cell">Thermal Dispersal</div>
+      <div class="matrix-cell">Lifecycle Span</div>
+    </div>
+
+    {% for block in section.blocks %}
+      <div class="matrix-col device-column" {{ block.shopify_attributes }}>
+        <div class="matrix-cell cell-header">
+          <h3>{{ block.settings.product_name | escape }}</h3>
+          <span class="matrix-price">{{ block.settings.price | escape }}</span>
+        </div>
+        <div class="matrix-cell"><span class="mobile-only-label">Core:</span>{{ block.settings.neural_core | escape }}</div>
+        <div class="matrix-cell"><span class="mobile-only-label">Compute:</span>{{ block.settings.compute_power | escape }}</div>
+        <div class="matrix-cell"><span class="mobile-only-label">Thermal:</span>{{ block.settings.thermals | escape }}</div>
+        <div class="matrix-cell"><span class="mobile-only-label">Lifecycle:</span>{{ block.settings.battery | escape }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .section-comparison { padding: 6rem 2rem; }
+  .comparison-header { text-align: center; margin-bottom: 4rem; }
+  .comparison-header h2 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 600; }
+  .comparison-header p { color: var(--color-text-muted); font-size: 1.1rem; }
+
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr repeat({{ section.blocks.size | default: 1 }}, 1fr);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--color-surface-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .matrix-col { display: flex; flex-direction: column; }
+  .label-column { background: rgba(255, 255, 255, 0.01); border-right: 1px solid rgba(255, 255, 255, 0.05); }
+  .matrix-cell {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    min-height: 80px;
+  }
+  .cell-header {
+    min-height: 120px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+  }
+  .cell-header h3 { font-size: 1.25rem; margin-bottom: 0.25rem; color: #fff; }
+  .matrix-price { color: var(--color-accent-blue); font-weight: 600; }
+  .mobile-only-label { display: none; }
+
+  @media (max-width: 768px) {
+    .matrix-grid { grid-template-columns: 1fr; }
+    .label-column { display: none; }
+    .mobile-only-label {
+      display: inline-block;
+      width: 120px;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .device-column { border-bottom: 4px solid rgba(255,255,255,0.05); }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Matrix Grid",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Structural Architectures Matrix"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Compare pure operational constraints and processing bandwidth directly."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "device",
+      "name": "Hardware Array",
+      "settings": [
+        { "type": "text", "id": "product_name", "label": "Device Name", "default": "Nexora Core X1" },
+        { "type": "text", "id": "price", "label": "Price", "default": "$1,499" },
+        { "type": "text", "id": "neural_core", "label": "Neural Array", "default": "Nexora N1 (8 Cores)" },
+        { "type": "text", "id": "compute_power", "label": "Compute Capacity", "default": "45 TOPS" },
+        { "type": "text", "id": "thermals", "label": "Thermal Array", "default": "Vapor Chamber Matrix" },
+        { "type": "text", "id": "battery", "label": "Runtime Lifecycle", "default": "Up to 18 Hours" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Matrix Grid",
+      "blocks": [
+        { "type": "device" },
+        { "type": "device" }
+      ]
+    }
+  ]
+}
+{% endschema %}
