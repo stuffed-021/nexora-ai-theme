@@ -1,1 +1,59 @@
-
+{
+  "sections": {
+    "hero": {
+      "type": "hero-animated",
+      "settings": {
+        "heading": "The Architecture of Intelligence",
+        "subheading": "NEXORA ECOSYSTEM v2.0",
+        "text": "Immersive computing nodes, continuous-wear biometrics, and autonomous assistant lattices built to align with human workflows."
+      }
+    },
+    "comparison": {
+      "type": "product-comparison",
+      "settings": {
+        "title": "Structural Architectures Matrix",
+        "subtitle": "Compare pure operational constraints and processing bandwidth directly."
+      },
+      "blocks": {
+        "device_a": {
+          "type": "device",
+          "settings": {
+            "product_name": "Nexora Ring S4",
+            "price": "$399",
+            "neural_core": "Matrix Core v1 Minimal",
+            "compute_power": "15 TOPS",
+            "thermals": "Bio-Passive Dispersion",
+            "battery": "Up to 5 Days"
+          }
+        },
+        "device_b": {
+          "type": "device",
+          "settings": {
+            "product_name": "Nexora Node X Hub",
+            "price": "$899",
+            "neural_core": "Nexora N1 Octa-Stack",
+            "compute_power": "45 TOPS",
+            "thermals": "Vapor Cell Array",
+            "battery": "Continuous (Wall Powered)"
+          }
+        }
+      },
+      "block_order": [
+        "device_a",
+        "device_b"
+      ]
+    },
+    "roi_calculator": {
+      "type": "productivity-calculator",
+      "settings": {
+        "heading": "Quantify Human Leverage Optimization",
+        "subtext": "Determine the structural time optimization matrix achieved when routing data logic overhead through local hardware arrays."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "comparison",
+    "roi_calculator"
+  ]
+}
