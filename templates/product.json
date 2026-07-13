@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main-product": {
+      "type": "hero-animated",
+      "settings": {
+        "heading": "Core System Hardware Profile Node",
+        "subheading": "PRODUCT SPECIFICATION LAYER",
+        "text": "Review local variables, continuous processing constraints, and active computing arrays for your hardware model selection."
+      }
+    }
+  },
+  "order": [
+    "main-product"
+  ]
+}
