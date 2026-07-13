@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "error-hero": {
+      "type": "hero-animated",
+      "settings": {
+        "heading": "404 // Node Frame Desynced",
+        "subheading": "SYSTEM EXECUTION FAULT",
+        "text": "The addressed directory node path does not map to any live server hardware configurations.",
+        "button_label": "Route Operations to Index Base"
+      }
+    }
+  },
+  "order": [
+    "error-hero"
+  ]
+}
