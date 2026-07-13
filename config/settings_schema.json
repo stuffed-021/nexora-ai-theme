@@ -1,1 +1,47 @@
-
+[
+  {
+    "name": "Nexora Global Aesthetics",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon File Asset"
+      }
+    ]
+  },
+  {
+    "name": "Elite Tech Styling Matrix",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Primary Deep Background Canvas",
+        "default": "#030303"
+      },
+      {
+        "type": "color",
+        "id": "color_surface_cards",
+        "label": "Elevated Structural Panels",
+        "default": "#121216"
+      },
+      {
+        "type": "color",
+        "id": "color_brand_accent",
+        "label": "Laser Core Brand Blue Focus Accent",
+        "default": "#0071e3"
+      },
+      {
+        "type": "color",
+        "id": "color_text_primary",
+        "label": "Primary Clear Alabaster Typography",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_text_muted",
+        "label": "Secondary Charcoal Meta Copy",
+        "default": "#8e8e93"
+      }
+    ]
+  }
+]
